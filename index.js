@@ -25,7 +25,7 @@ app.use("/user",userRoute)
 
 
 
-let PORT = process.env.PORT || 5000
+let PORT = process.env.PORT || 8080
 app.listen(PORT,async()=>{
     try{
         await connect(process.env.MONGO_URL)
