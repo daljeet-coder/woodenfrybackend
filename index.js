@@ -13,18 +13,11 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-
 app.use("/admin",adminRoute)
 app.use("/products",authproduct)
 app.use("/products",productRoutes)
 app.use("/user",userAuth)
 app.use("/user",userRoute)
-
-
-
-
-
-
 let PORT = process.env.PORT || 8080
 app.listen(PORT,async()=>{
     try{

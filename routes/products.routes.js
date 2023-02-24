@@ -4,9 +4,7 @@ const productRoutes = express.Router()
 
 productRoutes.get("/",async(req,res)=>{
     try{
-        const {page} = req.query;
-      const skip = (page-1)*20;
-        let allProducts = await Product.find().sort({_id: -1}).skip(skip).limit(20)
+        let allProducts = await Product.find(req.query)
         res.send({msg:'success',data:allProducts})
     }catch(er){
         res.sned({msg:"something went wrong"})
