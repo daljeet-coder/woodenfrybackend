@@ -22,18 +22,19 @@ adminRoute.post("/login",async(req,res)=>{
             res.send({msg:"somehting went wrong"})
         }
 })
-adminRoute.post("/register",async(req,res)=>{
-    try{
-        let {password} = req.body;
-       const encPass= await bcrypt.hash(password,+process.env.SALT_ROUNDS)
-       const body = {...req.body, password:encPass}
-       let newUser = new Admin(body);
-        newUser.save();
-        res.send({msg:"registration successful",data:newUser})
-    }catch(err){
-        res.send({"msg":"something went wrong","error":err})
-    }
-})
+// adminRoute.post("/register",async(req,res)=>{
+//     try{
+//         let {password} = req.body;
+//        const encPass= await bcrypt.hash(password,+process.env.SALT_ROUNDS)
+//        const body = {...req.body, password:encPass}
+//        let newUser = new Admin(body);
+//         newUser.save();
+//         res.send({msg:"registration successful",data:newUser})
+//     }catch(err){
+//         console.log(err)
+//         res.send({"msg":"something went wrong","error":err})
+//     }
+// })
 
 
 
