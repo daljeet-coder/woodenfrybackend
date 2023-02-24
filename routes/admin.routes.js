@@ -2,7 +2,7 @@ const express = require("express")
 const adminRoute = express.Router()
 const Admin = require("../models/admin")
 const bcrypt = require("bcrypt")
-
+const jwt = require("jsonwebtoken")
 adminRoute.post("/login",async(req,res)=>{
         try{
             let {password}  = req.body;
