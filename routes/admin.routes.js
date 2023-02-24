@@ -32,6 +32,7 @@ adminRoute.post("/register",async(req,res)=>{
         newUser.save();
         res.send({msg:"registration successful",data:newUser})
     }catch(err){
+            console.log(err)
         res.send({"msg":"something went wrong","error":err})
     }
 })
