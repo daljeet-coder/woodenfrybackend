@@ -37,7 +37,7 @@ deleting an item from orders => param:(id:user's id) and [updated cart]
 			=====================Admin pannel ================
 ==login:{email,and password will be provided }
 
-POST: base_URL/user/login  =>will give token {which can be used to login or logout user from frontend}
+POST: base_URL/admin/login  =>will give token {which can be used to login or logout user from frontend}
 
 ==getting users :
 GET : base_URL/users:===> will give all the users data ;
