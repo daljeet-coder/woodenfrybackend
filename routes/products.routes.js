@@ -10,6 +10,14 @@ productRoutes.get("/",async(req,res)=>{
         res.sned({msg:"something went wrong"})
     }
 })
+productRoutes.get("/:_id",async(req,res)=>{
+    try{
+        let allProducts = await Product.find(req.params)
+        res.send({msg:'success',data:allProducts})
+    }catch(er){
+        res.sned({msg:"something went wrong"})
+    }
+})
 productRoutes.post("/",async(req,res)=>{
     try{
         const newItem = new Product(req.body);
