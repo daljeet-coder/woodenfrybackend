@@ -34,7 +34,7 @@ userRoute.post("/login",async(req,res)=>{
             const isMathched = await bcrypt.compare(password,userPass)
             if(isMathched){
                 let token = jwt.sign({id:userExist[0]._id},process.env.SECURE_KEY)
-                res.send({token:token})
+                res.send({token:token,data:userExist[0]})
             }else{
                 res.status(404).send({data:"invalid credentials"})
             }
