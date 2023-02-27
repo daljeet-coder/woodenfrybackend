@@ -43,14 +43,22 @@ POST: base_URL/admin/login  =>will give token {which can be used to login or log
 
 ==getting users :
 GET : base_URL/users:===> will give all the users data ;
+
 getting cart items of a user :
+
 GET:  base_URL/uesrs/cart/id ====> expects: {(user's id:param) and (cart-array: body) => gives the cart items of that user
+
 getting orders of a user:
+
 GET:  base_URL/uesrs/order/id ====> expects: {(user's id:param) and (order-array: body) => gives the order items of that user;
+
 getting wishlist of a user:
+
 GET:  base_URL/uesrs/wishlist/id ====> expects: {(user's id:param) and (wishlist-array: body) => gives the wishlist items of that user;
+
 
 GET: base_URL/users/orders ===> expects id of user and gives orders of that user;
 
 GET : base_URL/products====>will give all the products ;
+
 PATCH : base_URL/products/product id  ==> will update the changes to the product;
