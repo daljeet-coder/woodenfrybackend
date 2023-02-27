@@ -1,10 +1,12 @@
             =======================  User: section =======================
 POST:  base_URL/user/register    => for registering new User;
-POST:   base_URL/user/login    =>will give token {which can be used to login or logout user from frontend}
+
+POST:   base_URL/user/login    =>will give token {which can be used to login or logout user from frontend} and user data
 
 ====CART ====:
 
 GET: base_URL/user/cart =>  expects header as Bearer token; gives all products of cart as array
+GET: base_URL/user/cart?query=one : for filtration
 
 PATCH: base_URL/user/cart =>  expects header as Bearer token and {body: (cart:[cart items array])}  
 
@@ -12,7 +14,8 @@ use cases of : {PATCH:base_URL/uesr/cart}
 
 adding item in the cart :=> param :( id: user's id) and [updated cart (cart_items+1) ]
 deleting an item from cart => param:(id:user's id) and [updated cart (cart_items-1) ]
- 
+filtring of items
+
 ====WISHLIST===:
 
 GET: base_URL/user/wishlist   =>  expects  will give all the items in wishlist of  a user.
@@ -29,7 +32,6 @@ GET: base_URL/user/orders   =>  expects  will give all the items in the cart of 
 PATCH: base_URL/cart =>  expects:{  param:(id : user's id);  body: (orders: [ ...user.cart,"id of the product which was added to order"])}  
 
 ====use cases of : {PATCH:base_URL/ordes} :
-
 adding item in the orders :=> param :( id: user's id) and [updated orders]
 deleting an item from orders => param:(id:user's id) and [updated cart]
 
@@ -48,13 +50,7 @@ GET:  base_URL/uesrs/order/id ====> expects: {(user's id:param) and (order-array
 getting wishlist of a user:
 GET:  base_URL/uesrs/wishlist/id ====> expects: {(user's id:param) and (wishlist-array: body) => gives the wishlist items of that user;
 
-
-
-
 GET: base_URL/users/orders ===> expects id of user and gives orders of that user;
-
-
-
 
 GET : base_URL/products====>will give all the products ;
 PATCH : base_URL/products/product id  ==> will update the changes to the product;
